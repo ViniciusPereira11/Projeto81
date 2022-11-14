@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meu primeiro canvas</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+   
+
+</head>
+<body> 
+    <center>
+    <h1> Meu primeiro Canvas </h1>
+    <!--É aqui que cria o canvas com a largura 650 e altura 600 -->
+    <canvas height="650" width="600" id="canvas" style=""> </canvas>
+    <br>
+    <input id="cor" type="text" placeholder="Digite a cor 🎨">
+ 
+    <button id="botaoLimpar" onclick="limpar()"> Limpar 🧹 </button>
+    </center>
+    <img src="sai.png">
+    <script>
+    
+
+
+        //código para guardar o canvas em uma variável
+    var canvas = document.getElementById("canvas");
+        //código para se referir ao canvas 2d
+    var ctx = canvas.getContext("2d");
+        //é aqui que define a cor
+    var cor = "blue";
+
+        //código para fazer o primeiro círculo
+    
+        //é aqui que usa o método beginPath para começar o desenho
+    ctx.beginPath();
+        //é aqui que usa a propriedade strokeStyle para definir a cor do desenho
+    ctx.strokeStyle = cor;
+        //é aqui que usa a propriedade lineWidth para definir o tamanho da linha    
+    ctx.lineWidth = 5;
+        //é aqui que usa o método arc para desenhar curvas ou círculos
+    ctx.arc(250, 210, 40, 0, 2*Math.PI);
+        //é aqui que manda fazer o deseho
+    ctx.stroke();
+
+    canvas.addEventListener("click",desenharCirculo);
+    function desenharCirculo(e){
+    mouseX = e.x - canvas.offsetLeft;
+    mouseY = e.y - canvas.offsetTop;
+
+
+    cor ="blue";
+    ctx.beginPath();
+    ctx.arc(300,140,40,0, 2*Math.PI);
+    ctx.strokeStyle = cor;
+    ctx.stroke();
+
+    cor = "yellow";
+    ctx.beginPath();
+    ctx.arc(260,200,40,0, 2*Math.PI);
+    ctx.strokeStyle = cor;
+    ctx.stroke();
+
+    cor = "black";
+    ctx.beginPath();
+    ctx.arc(225,140,40,0 , 2*Math.PI);
+    ctx.strokeStyle = cor;
+    ctx.stroke();
+
+    cor = "green";
+    ctx.beginPath();
+    ctx.arc(185,200,40,0, 2*Math.PI);
+    ctx.strokeStyle = cor;
+    ctx.stroke();
+
+    cor = "red";
+    ctx.beginPath();
+    ctx.arc(150,140,40,0 , 2*Math.PI);
+    ctx.strokeStyle = cor;
+    ctx.stroke();
+    }
+
+
+
+    function limpar(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    }
+    
+
+    </script>
+</body>
+</html>
